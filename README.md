@@ -12,7 +12,7 @@ PAST2HARM is an adaptive black-box jailbreak framework that exploits a temporal 
 gap in safety-aligned multimodal text-to-image (T2I) models. By reformulating harmful queries in
 the past tense and applying iterative escalation, the method bypasses refusal training in:
 
-- **GPT-Image-1** (OpenAI) — via `gpt-image-` (the publicly accessible image generation API)
+- **GPT-Image-1** (OpenAI) — via `gpt-image-2` (the publicly accessible image generation API)
 - **Gemini 2.0 Flash** (Google) — via `gemini-nano-banana-pro` with image generation
 - **Stable Diffusion XL** (Stability AI / Hugging Face) — via `stabilityai/stable-diffusion-xl-base-1.0`
 
