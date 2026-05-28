@@ -1,0 +1,35 @@
+# Ablation study configuration
+# Inherits all defaults; only overrides listed here are changed.
+
+# Sweep max_steps K
+attack_budgets: [2, 4, 6, 8]
+
+# Judge threshold sensitivity sweep
+judge_thresholds: [0.3, 0.4, 0.5, 0.6, 0.7]
+
+# Reformulation model ablation
+reformulator_models:
+  - gpt-3.5-turbo          # paper default
+  - gpt-4o                  # upper bound
+  - meta-llama/Llama-3-70b-instruct  # open-source alternative (via Together AI or similar)
+  - rule_based              # naive verb substitution baseline
+
+# Temporal anchoring strength levels
+anchoring_levels:
+  none:
+    description: "Simple tense shift only"
+    add_archival_cue: false
+    add_period_reference: false
+  weak:
+    description: "Adds 'in historical accounts'"
+    add_archival_cue: true
+    add_period_reference: false
+  moderate:
+    description: "Adds explicit historical period reference"
+    add_archival_cue: true
+    add_period_reference: true
+  strong:
+    description: "Full archival framing with period-specific contextual cues"
+    add_archival_cue: true
+    add_period_reference: true
+    add_contextual_cues: true
